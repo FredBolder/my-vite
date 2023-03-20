@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --nav-bg-color: black;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+header {
+  margin: 1rem;
+}
+
+.space_2,
+.space_4,
+.space_6 {
+  background-color: var(--nav-bg-color);
+  color: var(--nav-bg-color);
+}
+
+.space_2::after {
+  content: "__";
+}
+
+.space_4::after {
+  content: "____";
+}
+
+.space_6::after {
+  content: "______";
+}
+
+nav {
+  background-color: var(--nav-bg-color);
+  color: gray;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+}
+
+nav,
+.about,
+.computer {
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.about,
+.computer {
+  background-color: #000050;
+}
+
+.about_top,
+.computer_top,
+.section_code,
+.section_footer {
+  color: cornflowerblue;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+}
+
+.section_content {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.about .section_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about_photo {
+  width: 50%;
+}
+
+.about_text {
+  width: 100%;
+}
+
+.about_photo img {
+  object-fit: cover;
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 650px) {
+  nav {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .about .section_content {
+    flex-direction: row;
+  }
+  .about_photo {
+    width: 30%;
+  }
+  .about_text {
+    width: 70%;
+  }
+  nav {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+.proficiency {
+  visibility: hidden;
+  position: absolute;
+}
+
+@media (min-width: 550px) {
+  .proficiency {
+    visibility: visible;
+    position: unset;
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid cornflowerblue;
+  padding: 0.5rem;
+  text-align: left;
+}
