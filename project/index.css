@@ -6,6 +6,7 @@
 
 :root {
   --nav-bg-color: black;
+  --section-bg-color: #000050;
 }
 
 body {
@@ -24,15 +25,25 @@ header {
   color: var(--nav-bg-color);
 }
 
-.space_2::after {
+.space_2s,
+.space_4s,
+.space_6s {
+  background-color: var(--section-bg-color);
+  color: var(--section-bg-color);
+}
+
+.space_2::after,
+.space_2s::after {
   content: "__";
 }
 
-.space_4::after {
+.space_4::after,
+.space_4s::after {
   content: "____";
 }
 
-.space_6::after {
+.space_6::after,
+.space_6s::after {
   content: "______";
 }
 
@@ -45,7 +56,9 @@ nav {
 
 nav,
 .about,
-.computer {
+.computer,
+.languages,
+.projects {
   padding: 2rem;
   margin: 1rem;
   border-radius: 1rem;
@@ -62,13 +75,28 @@ a:hover {
   text-decoration: underline;
 }
 
+.external_links a {
+  font-size: 1em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .about,
-.computer {
-  background-color: #000050;
+.computer,
+.languages,
+.projects {
+  background-color: var(--section-bg-color);
 }
 
 .about_top,
 .computer_top,
+.languages_top,
+.projects_top,
 .section_code,
 .section_footer {
   color: cornflowerblue;
@@ -107,8 +135,19 @@ h2 {
   margin-bottom: 1rem;
 }
 
+h3 {
+  margin-bottom: 0.75rem;
+}
+
+.projects .section_code {
+  font-size: 0.75rem;
+}
+
 @media (min-width: 650px) {
   nav {
+    font-size: 1rem;
+  }
+  .projects .section_code {
     font-size: 1rem;
   }
 }
@@ -156,4 +195,49 @@ td {
   border: 1px solid cornflowerblue;
   padding: 0.5rem;
   text-align: left;
+}
+
+.e-books {
+  margin-top: 2rem;
+}
+
+.project_pictures {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project_pictures div {
+  background-image: url("./images/fredrums01.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  max-width: 640px;
+  height: 25rem;
+  border: 1px dashed gray;
+  animation-name: project_gallery;
+  animation-duration: 25000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1,0,0.6,0);
+}
+
+@keyframes project_gallery {
+  0% {
+    background-image: url("./images/fredrums01.gif");
+  }
+  20% {
+    background-image: url("./images/fredrums02.gif");
+  }
+  40% {
+    background-image: url("./images/dr01.gif");
+  }
+  60% {
+    background-image: url("./images/kalimbascore01.gif");
+  }
+  80% {
+    background-image: url("./images/bal_01.gif");
+  }
 }
